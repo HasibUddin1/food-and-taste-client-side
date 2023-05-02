@@ -4,10 +4,21 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
 
-    const {googleSignIn} = useContext(AuthContext)
+    const { googleSignIn, gitHubSignIn } = useContext(AuthContext)
 
     const handleGoogleSignIn = () => {
         googleSignIn()
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    const handleGitHubSignIn = () => {
+        gitHubSignIn()
         .then(result => {
             const loggedUser = result.user
             console.log(loggedUser)
@@ -33,7 +44,7 @@ const Login = () => {
             </form>
             <div className='w-1/2 mx-auto mt-5 flex gap-5 justify-center'>
                 <button onClick={handleGoogleSignIn} className="btn btn-outline btn-info rounded-lg">Google Login</button>
-                <button className="btn btn-outline rounded-lg">GitHub Login</button>
+                <button onClick={handleGitHubSignIn} className="btn btn-outline rounded-lg">GitHub Login</button>
             </div>
         </div>
     );
