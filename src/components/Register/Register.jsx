@@ -27,6 +27,11 @@ const Register = () => {
             return
         }
 
+        if(password.length < 6){
+            setError('Your password must be 6 characters long')
+            return
+        }
+
         if ((email, password)) {
             createUser(email, password)
                 .then(result => {
