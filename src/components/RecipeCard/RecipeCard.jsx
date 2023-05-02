@@ -24,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
                         >{ingredient.name}</li>)
                     }
                     <div className="card-actions justify-end">
-                        <button onClick={notify} disabled={showToast} className="bg-green-500 px-6 py-2 text-white rounded-xl font-semibold">Add to Favorites</button>
+                        <button onClick={notify} disabled={showToast} className={`bg-green-500 ${showToast || 'hover:bg-green-700 ease-in-out duration-200'} px-6 py-2 text-white rounded-xl font-semibold`}>Add to Favorites</button>
                     </div>
                 </div>
             </div>
