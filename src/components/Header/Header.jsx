@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className='bg-green-500 flex justify-between items-center font-semibold px-10 py-3'>
             <div>
-                <h1 className='text-3xl'>Food and Taste</h1>
+                <h1 className='text-3xl font-bold'>Food and Taste</h1>
             </div>
             <div className='flex gap-5 anchors-container'>
                 <Link to='/'>Home</Link>
