@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Register = () => {
+
     return (
         <div className='w-9/12 mx-auto mt-10'>
             <form>
@@ -14,8 +16,8 @@ const Register = () => {
                 <div className='w-1/4 mx-auto text-center mt-5'>
                     <input className='bg-green-500 hover:bg-green-700 cursor-pointer ease-in-out duration-200 px-6 py-2 rounded-lg w-1/2 text-white font-semibold' type="submit" value="Register" />
                 </div>
-                <div className='w-1/2 mx-auto'>
-                    <p className='text-center font-semibold'>Already have an account? <Link className='text-purple-500' to='/login'>Please Login</Link></p>
+                <div className='w-1/2 mx-auto mt-5'>
+                    <p className='text-center font-semibold'>Already have an account? <Link className='text-purple-500 hover:text-purple-700' to='/login'>Please Login</Link></p>
                 </div>
             </form>
         </div>
