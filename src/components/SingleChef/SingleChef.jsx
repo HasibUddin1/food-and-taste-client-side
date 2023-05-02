@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaThumbsUp } from "react-icons/fa";
 
 const SingleChef = ({ chef }) => {
-    const { imageUrl, name, yearsOfExperience, recipes } = chef
+    const { id, imageUrl, name, yearsOfExperience, recipes, likes } = chef
     return (
         <div>
             <div className="card card-compact w-96 h-[500px] bg-base-100 shadow-2xl">
@@ -15,8 +17,9 @@ const SingleChef = ({ chef }) => {
                             recipes.map(recipe => <li key={recipe.id} >{recipe.name}</li>)
                         }
                     </div>
+                    <h4 className='text-xl font-semibold flex items-center gap-2'>Likes: {likes} <FaThumbsUp></FaThumbsUp></h4>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">View Recipes</button>
+                        <Link to={`/chefs/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
                     </div>
                 </div>
             </div>
