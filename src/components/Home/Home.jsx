@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
             </div>
             <h1 className='text-5xl font-bold text-center mb-5'>Know More About Us</h1>
-            <div className='w-9/12 mx-auto flex flex-col md:flex-row md:gap-10 items-center mb-20'>
+            <div className='md:w-9/12 mx-auto flex flex-col md:flex-row md:gap-10 items-center mb-20'>
                 <div className='w-1/2'>
                     <h4 className='text-4xl font-semibold'>Its all about</h4>
                     <h2 className='text-5xl font-semibold mb-5'>Good Food & Taste</h2>
