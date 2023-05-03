@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaThumbsUp } from "react-icons/fa";
 import RecipeCard from '../RecipeCard/RecipeCard';
+import LazyLoad from 'react-lazyload';
 
 const ChefDetails = () => {
 
@@ -22,7 +23,9 @@ const ChefDetails = () => {
                     </Link>
                 </div>
                 <div>
-                    <img className='rounded-xl' src={imageUrl} alt="" />
+                    <LazyLoad height={200}>
+                        <img className='rounded-xl' src={imageUrl} alt="" />
+                    </LazyLoad>
                 </div>
             </div>
             <h2 className='text-4xl text-center font-bold mb-10'>Find Out the Best Recipes of {name}</h2>

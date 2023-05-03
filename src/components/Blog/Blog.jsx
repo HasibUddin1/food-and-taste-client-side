@@ -1,9 +1,18 @@
 import React from 'react';
 import './Blog.css'
+// import {ReactToPdf} from 'react-to-pdf'
 
 const Blog = () => {
     return (
         <div>
+            {/* <div>
+                <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                    {({ toPdf }) => (
+                        <button onClick={toPdf}>Generate pdf</button>
+                    )}
+                </ReactToPdf>
+                <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} />
+            </div> */}
             <h1 className='text-5xl text-center p-20 bg-indigo-100 bg-opacity-50 font-bold'>Blog</h1>
             <div className='w-9/12 mx-auto text-xl flex flex-col gap-4 blog-container mt-10'>
                 <h2>Tell us the differences between uncontrolled and controlled components</h2>
