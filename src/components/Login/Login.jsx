@@ -19,7 +19,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+                // console.log(loggedUser)
             })
             .catch(error => {
                 console.error(error)
@@ -30,7 +30,7 @@ const Login = () => {
         gitHubSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+                // console.log(loggedUser)
             })
             .catch(error => {
                 console.error(error)
