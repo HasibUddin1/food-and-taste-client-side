@@ -49,7 +49,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+                // console.log(loggedUser)
                 setSuccess('User has been successfully logged in')
                 setError('')
                 navigate(from, { replace: true })

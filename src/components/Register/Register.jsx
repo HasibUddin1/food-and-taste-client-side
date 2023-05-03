@@ -36,7 +36,7 @@ const Register = () => {
             createUser(email, password)
                 .then(result => {
                     const registeredUser = result.user
-                    console.log(registeredUser)
+                    // console.log(registeredUser)
                     setSuccess('User has been successfully created')
                     setError('')
                     updateUserProfile(registeredUser ,name, photo)

@@ -20,9 +20,9 @@ const Header = () => {
     }
 
     return (
-        <div className='bg-green-500 flex justify-between items-center font-semibold px-10 py-3'>
+        <div className='bg-green-500 flex flex-col md:flex-row justify-between items-center font-semibold px-10 py-3'>
             <div>
-                <h1 className='text-3xl font-bold'>Food and Taste</h1>
+                <h1 className='text-3xl font-bold mb-5 md:mb-0'>Food and Taste</h1>
             </div>
             <div className='flex items-center gap-5 anchors-container'>
                 <ActiveLink to='/'>Home</ActiveLink>

@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className='flex justify-center items-center px-40 bg-green-100'>
+            <div className='flex flex-col md:flex-row justify-center items-center md:px-40 bg-green-100'>
                 <div className='w-1/2'>
                     <h1 className='text-5xl mb-2 font-bold text-black text-center'>Food & <span className='text-green-500'>Taste</span></h1>
                     <p className='text-black text-xl font-semibold'>A recipe is a formula of ingredients and a list of instructions for creating prepared foods. It is used to control quality, quantity, and food costs in a food service operation.</p>
@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
             </div>
             <h1 className='text-5xl font-bold text-center mb-5'>Know More About Us</h1>
-            <div className='w-9/12 mx-auto flex gap-10 items-center mb-20'>
+            <div className='w-9/12 mx-auto flex flex-col md:flex-row md:gap-10 items-center mb-20'>
                 <div className='w-1/2'>
                     <h4 className='text-4xl font-semibold'>Its all about</h4>
                     <h2 className='text-5xl font-semibold mb-5'>Good Food & Taste</h2>
@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <h1 className='text-5xl font-bold text-center mb-5'>Find Out Our Best Recipes</h1>
             {/* Last Extra section */}
-            <div className='w-9/12 mx-auto grid grid-cols-3 gap-5 mb-20'>
+            <div className='w-9/12 mx-auto grid md:grid-cols-3 gap-5 mb-20'>
                 <div className="card w-96 bg-base-100 shadow-2xl rounded-xl">
                     <figure><img src={imageOne} alt="Shoes" /></figure>
                     <div className="card-body">
