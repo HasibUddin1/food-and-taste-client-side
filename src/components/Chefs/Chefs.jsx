@@ -16,14 +16,6 @@ const Chefs = () => {
     }, [])
     return (
         <div>
-            <div className='w-9/12 mx-auto grid grid-cols-3 gap-5 mb-10'>
-                {
-                    chefs.map(chef => <SingleChef
-                        key={chef.id}
-                        chef={chef}
-                    ></SingleChef>)
-                }
-            </div>
             {
                 loadingData &&
 
@@ -34,8 +26,15 @@ const Chefs = () => {
                     </svg>
                     <span className="sr-only">Loading...</span>
                 </div>
-
             }
+            <div className='w-9/12 mx-auto grid grid-cols-3 gap-5 mb-10'>
+                {
+                    chefs.map(chef => <SingleChef
+                        key={chef.id}
+                        chef={chef}
+                    ></SingleChef>)
+                }
+            </div>
         </div>
     );
 };

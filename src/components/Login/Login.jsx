@@ -1,8 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
+
+    const location = useLocation()
+
+    const navigate = useNavigate()
+
+    const from = location.state?.from?.pathname || '/'
 
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
@@ -22,13 +28,13 @@ const Login = () => {
 
     const handleGitHubSignIn = () => {
         gitHubSignIn()
-        .then(result => {
-            const loggedUser = result.user
-            console.log(loggedUser)
-        })
-        .catch(error => {
-            console.error(error)
-        })
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
     const handleSignIn = event => {
@@ -41,16 +47,17 @@ const Login = () => {
         setError('')
 
         signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user
-            console.log(loggedUser)
-            setSuccess('User has been successfully logged in')
-            setError('')
-        })
-        .catch(error => {
-            console.error(error)
-            setError(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+                setSuccess('User has been successfully logged in')
+                setError('')
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     return (
