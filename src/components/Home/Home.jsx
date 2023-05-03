@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <h1 className='text-5xl font-bold text-center mb-5'>Find Out Our Best Recipes</h1>
             {/* Last Extra section */}
-            <div className='w-9/12 mx-auto grid grid-cols-3 gap-5'>
+            <div className='w-9/12 mx-auto grid grid-cols-3 gap-5 mb-20'>
                 <div className="card w-96 bg-base-100 shadow-2xl rounded-xl">
                     <figure><img src={imageOne} alt="Shoes" /></figure>
                     <div className="card-body">
