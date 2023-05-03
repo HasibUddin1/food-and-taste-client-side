@@ -22,50 +22,52 @@ const Register = () => {
         setSuccess('')
         setError('')
 
-        if (password !== confirmPassword) {
-            setError('Your password did not match')
-            return
-        }
-
-        if(password.length < 6){
-            setError('Your password must be 6 characters long')
-            return
-        }
-
-        if ((email, password)) {
+        if ((email, password, name, photo)) {
             createUser(email, password)
                 .then(result => {
                     const registeredUser = result.user
                     // console.log(registeredUser)
                     setSuccess('User has been successfully created')
                     setError('')
-                    updateUserProfile(registeredUser ,name, photo)
-                    .then(() => {
-                        alert('User profile has been updated')
-                    })
-                    .catch(error => {
-                        console.error(error)
-                    })
+                    updateUserProfile(registeredUser, name, photo)
+                        .then(() => {
+                            alert('User profile has been updated')
+                        })
+                        .catch(error => {
+                            console.error(error)
+                        })
                 })
                 .catch(error => {
                     console.error(error)
                     setError(error.message)
                 })
         }
-        else{
-            setError('Email and Password fields cannot be empty')
+        else {
+            setError('Email, Password, Name and Photo fields cannot be empty')
+            return
         }
+
+        if (password !== confirmPassword) {
+            setError('Your password did not match')
+            return
+        }
+
+        if (password.length < 6) {
+            setError('Your password must be 6 characters long')
+            return
+        }
+
     }
 
     return (
         <div className='w-9/12 mx-auto mt-10'>
             <form onSubmit={handleRegister}>
                 <div className='flex flex-col gap-5 w-1/2 mx-auto'>
-                    <input className='border-2 rounded-lg px-3 py-1' type="text" name="name" id="name" placeholder='Your Name' required />
+                    <input className='border-2 rounded-lg px-3 py-1' type="text" name="name" id="name" placeholder='Your Name' />
                     <input className='border-2 rounded-lg px-3 py-1' type="text" name='photo' id='photo' placeholder='Your Photo' />
-                    <input className='border-2 rounded-lg px-3 py-1' type="email" name="email" id="email" placeholder='Your Email' required />
-                    <input className='border-2 rounded-lg px-3 py-1' type="password" name="password" id="password" placeholder='Your Password' required />
-                    <input className='border-2 rounded-lg px-3 py-1' type="password" name="confirm" id="confirm" placeholder='Confirm Your Password' required />
+                    <input className='border-2 rounded-lg px-3 py-1' type="email" name="email" id="email" placeholder='Your Email' />
+                    <input className='border-2 rounded-lg px-3 py-1' type="password" name="password" id="password" placeholder='Your Password' />
+                    <input className='border-2 rounded-lg px-3 py-1' type="password" name="confirm" id="confirm" placeholder='Confirm Your Password' />
                 </div>
                 <div className='w-1/4 mx-auto text-center mt-5'>
                     <input className='bg-green-500 hover:bg-green-700 cursor-pointer ease-in-out duration-200 px-6 py-2 rounded-lg w-1/2 text-white font-semibold' type="submit" value="Register" />
